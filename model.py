@@ -34,6 +34,8 @@ def evaluate_mode(true,predicted):
     r2_square=r2_score(true,predicted)
     return mae,mse,rmse,r2_square
 
+#just to check for best model
+'''
 models={
     "linear Regression":LinearRegression(),
     "lasso":Lasso(),
@@ -42,8 +44,9 @@ models={
     "Decision Tree":DecisionTreeRegressor(),
     "Random Forest Regressor":RandomForestRegressor(),
 }
+'''
 
-model_list=[]
+'''model_list=[]
 r2_list=[]
 for i in range(len(list(models))):
     model=list(models.values())[i]
@@ -77,11 +80,17 @@ for i in range(len(list(models))):
     
     print('='*35)
     print('\n')
+    '''
     
 model=Ridge().fit(x_train,y_train)
 y_pred=model.predict(x_test)
 score=r2_score(y_test,y_pred)*100
-print("accuracy of model is=%.2f"%score)
+#print("accuracy of model is=%.2f"%score)
 
-x=np.array([5.1,3.5,1.4,0.2])
-print(model.predict(x.reshape(1,-1)))
+labels = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+
+def ml_model(a, b, c, d):
+    x = np.array([a, b, c, d])  
+    prediction = model.predict(x.reshape(1, -1)) 
+    predicted_label = labels[int(prediction[0])]  
+    return predicted_label 
