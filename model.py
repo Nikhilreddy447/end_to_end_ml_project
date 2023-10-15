@@ -14,7 +14,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-df = pd.read_csv("C:\end_to_end_ml_project\Iris.csv")
+df = pd.read_csv("Iris.csv")
 df.head()
 
 df1=df.iloc[:,1:]

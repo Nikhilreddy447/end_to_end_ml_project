@@ -58,11 +58,12 @@
             <input type="number" step="any" id="number4" name="number4" required><br>
 
             <button type="submit">Submit</button>
-        </form>   
-    </div>
-    {% if output %}
+        </form> 
+        {% if output %}
         <h2>Species is:</h2>
         <p>{{ output }}</p>
-    {% endif %}
+        {% endif %}  
+    </div>
+    
 </body>
 </html>
