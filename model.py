@@ -14,6 +14,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
+
+
 df = pd.read_csv("Iris.csv")
 df.head()
 
@@ -81,11 +83,15 @@ for i in range(len(list(models))):
     print('='*35)
     print('\n')
     '''
-    
-model=Ridge().fit(x_train,y_train)
+def train_model(x,y,alpha=0.8):
+    model = Ridge(alpha=alpha, random_state=42)
+    model.fit(x, y)
+    return model
+
+model=train_model(x_train,y_train)
 y_pred=model.predict(x_test)
 score=r2_score(y_test,y_pred)*100
-#print("accuracy of model is=%.2f"%score)
+#print("accuracy of model is=",score)
 
 labels = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
 

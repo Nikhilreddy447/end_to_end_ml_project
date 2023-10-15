@@ -26,3 +26,8 @@ docker login
 ```bash
 docker push nikhilreddy001/iris:latest
 ```
+7. You can find the Docker image for this project on [Docker Hub](https://hub.docker.com/r/nikhilreddy001/iris)
+
+## Automated testing:
+
+1. I had used unittest for testing the model in which i had test the model traning function as you see in th test_ml_code.p file
